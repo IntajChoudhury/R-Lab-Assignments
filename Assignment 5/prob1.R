@@ -1,0 +1,10 @@
+library(nleqslv)
+b<-runif(1)
+func<-function(x)
+{
+  t<-1
+  y<-b-(1-((t+1+t*x)/(t+1))*(exp(-t*x)))
+  return(y)
+}
+sample<-nleqslv(2,func)$x
+print(sample)
